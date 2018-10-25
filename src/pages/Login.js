@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { CustomButtom, CustomInput } from '../styled/Components';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default class Login extends Component {
@@ -12,9 +12,7 @@ export default class Login extends Component {
 
     console.log(event);
 
-    toast.error("Toast Successfully!");
-
-    console.log("okokok");
+    toast.success("Toast Successfully!");
 
   }
 
@@ -36,6 +34,7 @@ export default class Login extends Component {
             </Form>
           </div>
         </div>
+        <ToastContainer />
       </div>
     )
   }

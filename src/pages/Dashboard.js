@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import PrivateRoute from '../routes/PrivateRoute';
 import Settings from './Settings'
 import Backups from './Backups'
@@ -8,11 +8,11 @@ export default class Dashboard extends Component {
     render() {
         return (
             <div>
-                <h1>Dashboard</h1>
+                <p>Dashboard</p>
 
                 <Switch>
-                    <PrivateRoute path="/settings" component={Settings} />
-                    <PrivateRoute path="/" component={Backups} />
+                    <Route path="/settings" component={Settings} />
+                    <Route path="/" component={Backups} />
                 </Switch>
             </div>
         )
