@@ -16,9 +16,10 @@ class Mmc {
 
         fetch('http://haccp.milady.io/oauth/token', {
             method: "POST",
-            body: new FormData(post),
+            body: JSON.stringify(post),
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
+                // "Accept": "application/json",
+                // "Content-Type": "application/json"
             },
         }).then(function (response) {
 
