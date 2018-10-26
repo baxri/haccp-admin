@@ -14,6 +14,8 @@ class Mmc {
 
         console.log(post);
 
+        localStorage.setItem("ok", "value");
+
         fetch('http://haccp.milady.io/oauth/token', {
             method: "POST",
             body: JSON.stringify(post),
