@@ -2,8 +2,17 @@
 
 class Mmc {
 
-    user = () => new Promise((result, reject) => {
+    login = (grantType, username, password, clientId, clientSecret) => {
 
+        console.log(username);
+        console.log(password);
+        console.log(grantType);
+        console.log(clientId);
+        console.log(clientSecret);
+
+    }
+
+    user = () => new Promise((result, reject) => {
 
         setTimeout(() => {
 

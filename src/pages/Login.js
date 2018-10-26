@@ -2,18 +2,36 @@ import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { CustomButtom, CustomInput } from '../styled/Components';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Mmc from '../gateway/Mmc';
 
 export default class Login extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      grantType: 'password',
+      username: 'admin@haccp.com',
+      password: 'xCM9kj2xNtx4)Kr4',
+      clientId: 2,
+      clientSecret: 'N8y1JBLpijxodiNe8JjuqBGqO9XWEeIbuLEJG3md',
+    }
+  }
+
 
   login = (event) => {
 
     event.preventDefault();
 
-    console.log(event);
+    Mmc.login(
+      this.state.grantType,
+      this.state.username,
+      this.state.password,
+      this.state.clientId,
+      this.state.clientSecret
+    );
 
     toast.success("Toast Successfully!");
-
   }
 
   render() {

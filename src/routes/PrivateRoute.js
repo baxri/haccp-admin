@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
 // import logo from './logo.svg';
 import LoadingScreen from 'react-loading-screen';
-import Mmc from '../gateway/Mmc'
+import Mmc from '../gateway/Mmc';
 
 
 export default class PrivateRoute extends Component {
@@ -23,7 +23,7 @@ export default class PrivateRoute extends Component {
 
             this.setState({
                 loading: false,
-                auth: true
+                auth: false
             });
 
         } catch (error) {

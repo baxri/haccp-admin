@@ -9,6 +9,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 class App extends Component {
   render() {
