@@ -19,11 +19,12 @@ export default class PrivateRoute extends Component {
     componentWillMount = async () => {
 
         try {
-            let user = await Mmc.user();
+
+            let auth = await Mmc.checkAuth();
 
             this.setState({
                 loading: false,
-                auth: false
+                auth: auth
             });
 
         } catch (error) {
@@ -41,7 +42,7 @@ export default class PrivateRoute extends Component {
                 textColor=''
                 logoSrc=''
                 text=''
-            />
+            ><p></p></LoadingScreen>
             )
         }
 

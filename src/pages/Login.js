@@ -19,19 +19,24 @@ export default class Login extends Component {
   }
 
 
-  login = (event) => {
+  login = async (event) => {
 
     event.preventDefault();
 
-    Mmc.login(
-      this.state.grantType,
-      this.state.username,
-      this.state.password,
-      this.state.clientId,
-      this.state.clientSecret
-    );
+    try {
 
-    toast.success("Toast Successfully!");
+      await Mmc.login(
+        this.state.grantType,
+        this.state.username,
+        this.state.password,
+        this.state.clientId,
+        this.state.clientSecret
+      );
+
+      this.props.history.push('/dashboard');
+    } catch (error) {
+      toast.error(error.message);
+    }
   }
 
   render() {
